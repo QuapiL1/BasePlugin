@@ -1,0 +1,10 @@
+name: ParlaEssentials
+version: 0.1-EXPERIMENTAL
+main: xyz.yarinlevi.parlaessentials.ParlaEssentials
+api-version: 1.16
+
+commands:
+  parla:
+    description: test
+  testmessages:
+    permission: parlaessentials.test

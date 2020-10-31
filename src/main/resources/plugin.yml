@@ -1,0 +1,12 @@
+name: BasePlugin
+version: ${project.version}
+main: xyz.yarinlevi.baseplugin.BasePlugin
+api-version: 1.16
+
+commands:
+  testmessages:
+    permission: op
+
+permissions:
+  op:
+    default: op
