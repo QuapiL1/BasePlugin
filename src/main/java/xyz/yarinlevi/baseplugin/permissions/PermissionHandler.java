@@ -45,6 +45,6 @@ public class PermissionHandler implements Listener {
 
     @EventHandler
     public void onPlayerDisconnect(PlayerQuitEvent event) {
-        BasePlugin.instance.permissionHandler.removePlayerFromPermissionHandler(event.getPlayer());
+        BasePlugin.getInstance().getPermissionHandler().removePlayerFromPermissionHandler(event.getPlayer());
     }
 }

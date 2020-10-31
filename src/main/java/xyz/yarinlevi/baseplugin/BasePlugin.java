@@ -9,9 +9,9 @@ import xyz.yarinlevi.baseplugin.messages.PlaceholderHandler;
 import xyz.yarinlevi.baseplugin.permissions.PermissionHandler;
 
 public final class BasePlugin extends JavaPlugin {
-    public static BasePlugin instance;
-    @Getter public PermissionHandler permissionHandler;
-    @Getter public MessageHandler messageHandler;
+    @Getter private static BasePlugin instance;
+    @Getter private PermissionHandler permissionHandler;
+    @Getter private MessageHandler messageHandler;
 
     @Override
     public void onEnable() {
