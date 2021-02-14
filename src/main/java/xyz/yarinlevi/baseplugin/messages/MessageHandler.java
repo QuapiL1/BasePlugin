@@ -8,13 +8,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import xyz.yarinlevi.baseplugin.BasePlugin;
-import xyz.yarinlevi.baseplugin.classes.FileManager;
+import xyz.yarinlevi.baseplugin.files.FileManager;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 
 public class MessageHandler {
-    private final HashMap<String, String> messages = new HashMap<>();
+    private final Map<String, String> messages = new HashMap<>();
     @Getter private final File file;
     @Getter private final FileConfiguration data;
 
@@ -22,7 +23,7 @@ public class MessageHandler {
         file = new File(BasePlugin.getInstance().getDataFolder(), "messages.yml");
         data = YamlConfiguration.loadConfiguration(file);
 
-        FileManager.registerData(file, data);
+        BasePlugin.getInstance().getFileManager().registerData(file, data);
         ConfigurationSection messageSection = data.getConfigurationSection("messages");
 
         if (messageSection != null) {
