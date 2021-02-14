@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.yarinlevi.baseplugin.commands.TestMessages;
+import xyz.yarinlevi.baseplugin.files.FileManager;
 import xyz.yarinlevi.baseplugin.messages.MessageHandler;
 import xyz.yarinlevi.baseplugin.messages.PlaceholderHandler;
 import xyz.yarinlevi.baseplugin.permissions.PermissionHandler;
@@ -12,6 +13,7 @@ public final class BasePlugin extends JavaPlugin {
     @Getter private static BasePlugin instance;
     @Getter private PermissionHandler permissionHandler;
     @Getter private MessageHandler messageHandler;
+    @Getter private FileManager fileManager;
 
     @Override
     public void onEnable() {
@@ -21,6 +23,8 @@ public final class BasePlugin extends JavaPlugin {
         this.saveDefaultConfig();
         saveResource("messages.yml", false);
 
+        //Initialization of file manager
+        fileManager = new FileManager();
 
         //Initialization of message handler
         messageHandler = new MessageHandler();
